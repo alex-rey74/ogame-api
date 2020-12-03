@@ -1,11 +1,11 @@
 {
   "name": "ogame-api",
   "version": "1.0.0",
-  "description": "Update the database with the data extracted from the official API",
-  "main": "index.js",
+  "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
   },
-  "author": "Alex-REY",
-  "license": "ISC"
+  "dependencies": {},
+  "devDependencies": {}
 }
