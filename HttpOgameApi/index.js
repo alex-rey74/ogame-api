@@ -1,4 +1,5 @@
-export default async function (context, req) {
+module.exports = async function (context, req) {
+
     import { XMLHttpRequest } from "xmlhttprequest";
 
     context.log('JavaScript HTTP trigger function processed a request.');
