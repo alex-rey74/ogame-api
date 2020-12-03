@@ -1,5 +1,5 @@
 export default async function (context, req) {
-
+    var XMLHttpRequest = require('xmlhttprequest');
     context.log('JavaScript HTTP trigger function processed a request.');
 
     const xhr = new XMLHttpRequest();
