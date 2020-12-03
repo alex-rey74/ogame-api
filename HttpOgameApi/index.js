@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
 
     xhr.onerror = function(){
         context.res = {
-            status: 500
+            body: "The XML document is unavailable"
         };
     }
 
