@@ -1,23 +1,17 @@
 export default async function (context, req) {
-    var XMLHttpRequest = require('xmlhttprequest');
-    context.log('JavaScript HTTP trigger function processed a request.');
+    const https = require('https');
 
-    const xhr = new XMLHttpRequest();
+    https.get('https://s167-fr.ogame.gameforge.com/api/players.xml', response => {
+        let data = '';
 
-    xhr.onload = function(){
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: xhr.responseXML.documentElement.nodeName
-        };
-    }
+        response.on('data', (chunk) => {
+            data =+ chunk;
+        })
 
-    xhr.onerror = function(){
-        context.res = {
-            body: "The XML document is unavailable"
-        };
-    }
-
-    xhr.open("GET", "https://s167-fr.ogame.gameforge.com/api/players.xml");
-    xhr.responseType = "document";
-    xhr.send();
+        response.on('end', () => {
+            context.res = {
+                body: data
+            }
+        })
+    });
 }
